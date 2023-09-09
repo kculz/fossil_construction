@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import { Footer, Header } from "./layouts"
-import { Landing } from "./pages"
+import { Landing, Register } from "./pages"
 
 
 function App() {
@@ -11,6 +11,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Landing />} />
+        <Route path="/user/register" element={<Register />} />
       </Routes>
       <Footer />
      </BrowserRouter>

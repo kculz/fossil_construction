@@ -24,7 +24,7 @@ const Landing = () => {
   return (
     <>
     {/* Hero */}
-        <div className="hero landing-page-her py-24 ">
+        <div className="hero landing-page-hero bg-gray-600  ">
             <div className="flex flex-col justify-center md:items-start items-center gap-4">
                 <h1 className="md:text-3xl text-lg text-gray-800">Lorem ipsum dolor sit. <span className="text-green-600 font-bold">Lorem, ipsum.</span>Lorem ipsum dolor sit, amet consectetur .</h1>
                 <p className="text-sm text-gray-800">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet quam culpa non nam vitae est quae ducimus consectetur ad ut!</p>
@@ -38,7 +38,7 @@ const Landing = () => {
                     <input type="email" className="border-b border-green-700 bg-transparent outline-none py-3 px-3 text-green-900 text-lg" placeholder="Enter Email Here"/>
                     <input type="password" className="border-b border-green-700 bg-transparent outline-none py-3 px-3 text-green-900 text-lg" name="password" id="password" placeholder="Enter password here"/>
                     <Link className="bg-gray-200 py-2 px-2 rounded-md text-center">Login</Link>
-                    <p className="text-xs text-white py-8">Dont have an account <span className="text-green-600 text-sm"><Link>Register</Link></span></p>
+                    <p className="text-xs text-white py-8">Dont have an account <span className="text-green-600 text-sm"><Link to="/user/register">Register</Link></span></p>
                 </form>
             </div>
            </div>
@@ -49,7 +49,7 @@ const Landing = () => {
     {/* Services */}
         <div className="bg-white w-screen h-auto md:px-32 px-10 py-10">
             <h1 className="text-center md:text-5xl text-2xl text-gray-900 py-10">What you will get</h1>
-            <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5">
+            <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5 py-10">
 
                 {
                     imageData.map((data, index) =>  <div className="rounded shadow bg-white overflow-hidden" key={index}>
