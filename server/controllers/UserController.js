@@ -35,7 +35,9 @@ const login = async (req, res) => {
             return res.status(404).json({msg: "Invalid credentials"});
         }
 
-        return res.status(200).json({msg: `Welcome ${userExist.username}`});
+        req.session.username = userExist.username;
+        console.log(req.session.username)
+        return res.status(200).json({msg: `Welcome ${userExist.username}`, username: req.session.username});
 
     } catch (error) {
         res.status(500).json({error: "Internal server error."});
