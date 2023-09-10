@@ -17,13 +17,13 @@ const Header = () => {
                     <Link className="lg:text-sm text-xs  text-gray-100 hover:text-green-900">Home</Link>
                 </li>
                 <li>
-                    <Link className="lg:text-sm text-xs  text-gray-100 hover:text-green-900">Services</Link>
+                    <Link to="/services" className="lg:text-sm text-xs  text-gray-100 hover:text-green-900">Services</Link>
                 </li>
                 <li>
                     <Link className="lg:text-sm text-xs  text-gray-100 hover:text-green-900">Contact Us</Link>
                 </li>
                 <li>
-                    <Link className="lg:text-sm text-xs  text-gray-100 hover:text-green-900">RFQ (Request for quotation)</Link>
+                    <Link to="/request-for-quotation" className="lg:text-sm text-xs  text-gray-100 hover:text-green-900">RFQ (Request for quotation)</Link>
                 </li>
                 <li>
                     <Link className="lg:text-sm text-xs  text-gray-100 hover:text-green-900">FAQ</Link>
@@ -51,13 +51,13 @@ const Header = () => {
         <Link onClick={handleNav} className="text-gray-200 text-lg hover:text-green-900">Home</Link>
     </li>
     <li>
-        <Link onClick={handleNav} className="text-gray-200 text-lg hover:text-green-900">Services</Link>
+        <Link to="/services" onClick={handleNav} className="text-gray-200 text-lg hover:text-green-900">Services</Link>
     </li>
     <li>
         <Link onClick={handleNav} className="text-gray-200 text-lg hover:text-green-900">Contact Us</Link>
     </li>
     <li>
-        <Link onClick={handleNav} className="text-gray-200 text-lg hover:text-green-900">RFQ (Request for Quotation)</Link>
+        <Link to="/request-for-quotation" onClick={handleNav} className="text-gray-200 text-lg hover:text-green-900">RFQ (Request for Quotation)</Link>
     </li>
     <li>
         <Link onClick={handleNav} className="text-gray-200 text-lg hover:text-green-900">FAQ</Link>

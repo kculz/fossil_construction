@@ -1,4 +1,7 @@
-import { Link } from "react-router-dom"
+import axios from "axios";
+import { useState } from "react"
+import { Link, useNavigate } from "react-router-dom"
+import { toast } from "react-toastify";
 
 const Landing = () => {
 
@@ -21,6 +24,29 @@ const Landing = () => {
             desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio aspernatur exercitationem cupiditate eum dicta odio, ex fuga reprehenderit facere aliquid."
         },
     ]
+
+    const navigate = useNavigate();
+
+    const [values, setValues] = useState({
+        username: '',
+        password: ''
+    });
+
+    const handleLogin = async (e) => {
+        e.preventDefault();
+
+        await axios.post('/users/login', values).then((res) => {
+
+            console.log(res.data.msg);
+            toast.success(res.data.msg);
+            navigate('/client-area');
+
+        }).catch((err) => {
+
+            toast.error(err.error);
+
+        })
+    }
   return (
     <>
     {/* Hero */}
@@ -34,10 +60,11 @@ const Landing = () => {
             <div className="bg-green-900/30 backdrop-blur rounded-lg lg:w-2/3 w-full p-5">
                 <h1 className="text-gray-100 text-center text-2xl font-bold pb-10">Login Here</h1>
 
-                <form action="" className="flex flex-col gap-3">
-                    <input type="email" className="border-b border-green-700 bg-transparent outline-none py-3 px-3 text-green-900 text-lg" placeholder="Enter Email Here"/>
-                    <input type="password" className="border-b border-green-700 bg-transparent outline-none py-3 px-3 text-green-900 text-lg" name="password" id="password" placeholder="Enter password here"/>
-                    <Link className="bg-gray-200 py-2 px-2 rounded-md text-center">Login</Link>
+                <form onSubmit={handleLogin} action="" className="flex flex-col gap-3">
+                    <input onChange={(e)=> setValues({...values, username: e.target.value})} type="text" name="username" id="username" className="border-b border-green-700 bg-transparent outline-none py-3 px-3 text-green-900 text-lg" placeholder="Enter Username Here"/>
+                    <input onChange={(e)=> setValues({...values, password: e.target.value})} type="password" className="border-b border-green-700 bg-transparent outline-none py-3 px-3 text-green-900 text-lg" name="password" id="password" placeholder="Enter password here"/>
+                    <input type="submit" value="Login" className="bg-gray-200 py-2 px-2 rounded-md text-center" />
+                    {/* <Link >Login</Link> */}
                     <p className="text-xs text-white py-8">Dont have an account <span className="text-green-600 text-sm"><Link to="/user/register">Register</Link></span></p>
                 </form>
             </div>
