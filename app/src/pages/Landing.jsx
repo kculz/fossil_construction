@@ -34,7 +34,7 @@ const Landing = () => {
 
     const handleLogin = async (e) => {
         e.preventDefault();
-        axios.defaults.withCredentials = true;
+        // axios.defaults.withCredentials = true;
         await axios.post('/users/login', values).then((res) => {
 
             console.log(res.data.msg);
