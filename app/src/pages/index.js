@@ -4,5 +4,8 @@ import Services from "./Services";
 import Register from "./Register";
 import Rfq from "./RFQ";
 import Login from "./Login";
+import Request from "./Request";
+import Account from "../Account";
+import Chat from "./Chat";
 
-export {Landing, Service, Services, Register, Rfq, Login};
+export {Landing, Service, Services, Register, Rfq, Login, Request, Account, Chat};
