@@ -19,7 +19,7 @@ export const ProtectedRoute = () => {
     let auth = {'token': jwt};
     return(
         <React.Fragment>
-            {auth.token? <Outlet /> : <Navigate to="/login" />}
+            {auth.token? <Outlet /> : <Navigate to="/client-area" />}
         </React.Fragment>
     )
 };

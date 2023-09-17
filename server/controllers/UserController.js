@@ -1,4 +1,5 @@
 const {User} = require('../models');
+const jwt = require("jsonwebtoken");
 
 const register = async (req, res) => {
 
@@ -35,9 +36,11 @@ const login = async (req, res) => {
             return res.status(404).json({msg: "Invalid credentials"});
         }
 
+        const token = jwt.sign({userId: userExist.id}, process.env.JWT_SECRET, {expiresIn: "1d"});
+
         req.session.username = userExist.username;
         console.log(req.session.username)
-        return res.status(200).json({msg: `Welcome ${userExist.username}`, username: req.session.username});
+        return res.status(200).json({msg: `Welcome ${userExist.username}`, username: req.session.username, token});
 
     } catch (error) {
         res.status(500).json({error: "Internal server error."});

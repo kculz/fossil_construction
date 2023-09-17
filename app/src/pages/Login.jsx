@@ -9,33 +9,28 @@ const Login = () => {
   const navigate = useNavigate();
 
   const [values, setValues] = useState({
-    fullname: '',
-    email: '',
+   
     username: '',
     password: '',
-    confirmPassword: ''
+   
   });
 
   const handleLogin = async (e) => {
     e.preventDefault();
 
-    if(values.password != values.confirmPassword){
-      toast.warning("password does'nt match.");
-      return;
-    }
-    await axios.post('/users/login', values).then((res) => {
+     // axios.defaults.withCredentials = true;
+     await axios.post('/users/login', values).then((res) => {
+
+      userStore(res.data)
       console.log(res.data.msg);
-      toast.info(res.data.msg);
-       userStore(res.data);
+      toast.success(res.data.msg);
       navigate('/client-area');
 
+  }).catch((err) => {
 
-    }).catch((err) => {
-
-      console.log(err.error);
       toast.error(err.error);
 
-    })
+  })
 
   };
   return (
@@ -47,12 +42,12 @@ const Login = () => {
                 <h1 className="text-center md:text-3xl text-xl font-semibold">Login here</h1>
                 <p className="text-sm text-center">To become a user.</p>
                 <input required onChange={(e)=> setValues({...values, username: e.target.value})} type="text" name="username" id="username" placeholder="Enter your username" className="border border-green-600 bg-transparent outline-none px-2 py-3 text-lg text-green-600 rounded lg:w-[500px] w-full " />
-                <input required onChange={(e)=> setValues({...values, email: e.target.value})} type="email" name="email" id="email" placeholder="Enter your email" className="border border-green-600 bg-transparent outline-none px-2 py-3 text-lg text-green-600 rounded lg:w-[500px] w-full " />
+                
                 <input required onChange={(e)=> setValues({...values, password: e.target.value})} type="password" name="password" id="password" placeholder="Enter password" className="border border-green-600 bg-transparent outline-none px-2 py-3 text-lg text-green-600 rounded lg:w-[500px] w-full " />
-                <input required onChange={(e)=> setValues({...values, confirmPassword: e.target.value})} type="password" name="confirmPassword" id="confirmPassword" placeholder="Confirm password" className="border border-green-600 bg-transparent outline-none px-2 py-3 text-lg text-green-600 rounded lg:w-[500px] w-full " />
+                
                 <input type="submit" value="Login"  className="bg-green-600 rounded py-3 px-4 text-center w-full"/>
 
-                <Link to="/">Already a <span className="text-lg text-green-600 font-semibold">User</span></Link>
+                <Link to="/user/register">Not a User? <span className="text-lg text-green-600 font-semibold">Register</span></Link>
             </form>
             </div>
             {/* Login form end */}
