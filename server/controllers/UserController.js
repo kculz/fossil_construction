@@ -38,9 +38,9 @@ const login = async (req, res) => {
 
         const token = jwt.sign({userId: userExist.id}, process.env.JWT_SECRET, {expiresIn: "1d"});
 
-        req.session.username = userExist.username;
-        console.log(req.session.username)
-        return res.status(200).json({msg: `Welcome ${userExist.username}`, username: req.session.username, token});
+        // req.session.username = userExist.username;
+        // console.log(req.session.username)
+        return res.status(200).json({msg: `Welcome ${userExist.username}`, username: userExist.username, token});
 
     } catch (error) {
         res.status(500).json({error: "Internal server error."});

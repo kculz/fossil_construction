@@ -2,6 +2,7 @@ import axios from "axios";
 import { useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import { toast } from "react-toastify";
+import { userStore } from "../helper";
 
 const Landing = () => {
 
@@ -40,6 +41,10 @@ const Landing = () => {
             console.log(res.data.msg);
             toast.success(res.data.msg);
             navigate('/client-area');
+            console.log(res.data);
+            console.log(userStore(res.data));
+
+
 
         }).catch((err) => {
 
