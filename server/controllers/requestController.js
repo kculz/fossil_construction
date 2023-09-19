@@ -2,10 +2,12 @@ const nodemailer = require('nodemailer');
 
 // Create a transporter object with your email service provider configuration
 const transporter = nodemailer.createTransport({
-  service: 'smtp',
+  host: 'binary-apps.com',
+  port: "465",
+  secure: true,
   auth: {
-    user: 'kudzaimunyama69@gmail.com',
-    pass: 'tatendah'
+    user: 'support@binary-apps.com',
+    pass: 'hW0XRM1i1y7(+e'
   }
 });
 
