@@ -21,11 +21,11 @@ const Dashboard = () => {
             <Link to="/logout">Logout</Link>
           </aside>
 
-        <Link className="aside-icon px-3 fixed md:hidden" onClick={()=> setSideNav(!sideNav)}>
-          {
-            !sideNav ? <p className="text-2xl text-green font-Montserrat font-semibold bg-green-600 rounded-full py-1 px-3 mt-4">&gt;</p> : <p className="text-2xl font-Montserrat font-semibold">&lt;</p>
-          }
-        </Link>
+            <Link className="aside-icon px-3 fixed md:hidden" onClick={()=> setSideNav(!sideNav)}>
+              {
+                !sideNav ? <p className="text-2xl text-green font-Montserrat font-semibold bg-green-600 rounded-full py-1 px-3 mt-4">&gt;</p> : <p className="text-2xl font-Montserrat font-semibold">&lt;</p>
+              }
+            </Link>
 
           <div className="md:col-span-2 w-full">
             <h1 className="text-center py-10 text-2xl md:text-4xl font-semibold">Dashboard</h1>

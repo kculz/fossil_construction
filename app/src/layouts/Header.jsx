@@ -52,19 +52,19 @@ const Header = () => {
            {
             openNav &&  <ul className="w-full md:hidden fixed flex flex-col gap-5 top-24 bg-gray-900/50 backdrop-blur justify-center items-center px-10 py-10 z-50">
             <li>
-                <Link to="/" onClick={handleNav} className="text-gray-200 text-lg hover:text-green-900">Dashboard</Link>
+                <Link onClick={handleNav} to="/client-area" className="lg:text-sm text-xs  text-gray-100 hover:text-green-900">Dashboard</Link>
             </li>
             <li>
-                <Link to="/services" onClick={handleNav} className="text-gray-200 text-lg hover:text-green-900">Services</Link>
+                <Link onClick={handleNav} to="/my-account" className="lg:text-sm text-xs  text-gray-100 hover:text-green-900">My Account</Link>
             </li>
             <li>
-                <Link to="/contact" onClick={handleNav} className="text-gray-200 text-lg hover:text-green-900">Contact Us</Link>
+                <Link onClick={handleNav} to="/make-request" className="lg:text-sm text-xs  text-gray-100 hover:text-green-900">Make Request</Link>
             </li>
             <li>
-                <Link to="/make-request" onClick={handleNav} className="text-gray-200 text-lg hover:text-green-900">RFQ (Request for Quotation)</Link>
+                <Link onClick={handleNav} to="/chat" className="lg:text-sm text-xs  text-gray-100 hover:text-green-900">Chat to Support</Link>
             </li>
             <li>
-                <Link to="/faq" onClick={handleNav} className="text-gray-200 text-lg hover:text-green-900">FAQ</Link>
+                <Link onClick={handleNav} to="/logout" className="lg:text-sm text-xs  text-gray-100 hover:text-green-900">Logout</Link>
             </li>
         </ul>
            }
