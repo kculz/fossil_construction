@@ -5,7 +5,6 @@ import { userData } from "../helper";
 const ProtectedRoute = () => {
     let {token} = userData();
     let auth = {'token': token};
-    console.log(token);
   return (
         <React.Fragment>
             {auth.token? <Outlet /> : <Navigate to="/user/login" />}

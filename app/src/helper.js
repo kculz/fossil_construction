@@ -4,12 +4,10 @@ export const userStore = (data) => {
         username: data.username,
         token: data.token
     }))
-    // console.log(data)
 };
 
 export const userData = () => {
     const userStringfied = localStorage.getItem("user") || '""';
-    console.log(userStringfied);
     return JSON.parse(userStringfied || {});
 };
 

@@ -39,8 +39,11 @@ const Landing = () => {
         // axios.defaults.withCredentials = true;
         await axios.post('/users/login', values).then((res) => {
             userStore(res.data);
-            toast.success(res.data.msg);
             navigate('/client-area');
+            window.location.reload();
+            toast.success(res.data.msg);
+
+
 
 
         }).catch((err) => {

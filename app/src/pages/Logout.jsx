@@ -6,9 +6,10 @@ const Logout = () => {
   const navigate = useNavigate();
   useEffect(() => {
     localStorage.setItem("user", "");
-    toast.success("Logged out!");
     navigate("/user/login");
-  },[navigate])
+    window.location.reload();
+    toast.success("Logged out!");
+  },[])
   return null
 };
 

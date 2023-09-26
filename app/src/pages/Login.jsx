@@ -19,12 +19,14 @@ const Login = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
 
-     // axios.defaults.withCredentials = true;
+    //  axios.defaults.withCredentials = true;
      await axios.post('/users/login', values).then((res) => {
 
-      toast.success(res.data.msg);
       navigate('/client-area');
       userStore(res.data);
+      window.location.reload();
+      toast.success(res.data.msg);
+
 
 
   }).catch((err) => {
