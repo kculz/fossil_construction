@@ -72,10 +72,10 @@ const Rfq = () => {
       {
         sideNav && <aside className="flex md:hidden flex-col items-center justify-center bg-green-600/50 backdrop-blur absolute top-24 w-[80vw] shadow gap-10 font-semibold px-2 h-full">
         <Link><FaTimes size={30} color="white" className="" onClick={handleSideNav}/></Link>
-        <Link onClick={handleSideNav}>Dashboard</Link>
-        <Link onClick={handleSideNav}>My account</Link>
-        <Link onClick={handleSideNav}>Make request</Link>
-        <Link onClick={handleSideNav}>Chat to Support</Link>
+        <Link to="/client-area"  onClick={handleSideNav}>Dashboard</Link>
+        <Link to="/my-account" onClick={handleSideNav}>My account</Link>
+        <Link className="active" to="/make-request" onClick={handleSideNav}>Make request</Link>
+        <Link to="/chat" onClick={handleSideNav}>Chat to Support</Link>
         <Link to="/logout" onClick={handleSideNav}>Logout</Link>
 
       </aside>

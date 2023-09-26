@@ -28,15 +28,11 @@ const Header = () => {
                         <li>
                             <Link to="/services" className="lg:text-sm text-xs  text-gray-100 hover:text-green-900">Services</Link>
                         </li>
+                        
                         <li>
-                            <Link to="/contact" className="lg:text-sm text-xs  text-gray-100 hover:text-green-900">Contact Us</Link>
+                            <Link to="/make-request" className="lg:text-sm text-xs  text-gray-100 hover:text-green-900">Make Request</Link>
                         </li>
-                        <li>
-                            <Link to="/make-request" className="lg:text-sm text-xs  text-gray-100 hover:text-green-900">RFQ (Request for quotation)</Link>
-                        </li>
-                        <li>
-                            <Link to="/faq" className="lg:text-sm text-xs  text-gray-100 hover:text-green-900">FAQ</Link>
-                        </li>
+                       
                     </ul>
         
                     {/* Menu icon */}
@@ -62,15 +58,11 @@ const Header = () => {
             <li>
                 <Link to="/services" onClick={handleNav} className="text-gray-200 text-lg hover:text-green-900">Services</Link>
             </li>
+            
             <li>
-                <Link to="/contact" onClick={handleNav} className="text-gray-200 text-lg hover:text-green-900">Contact Us</Link>
+                <Link to="/make-request" onClick={handleNav} className="text-gray-200 text-lg hover:text-green-900">Make Request</Link>
             </li>
-            <li>
-                <Link to="/make-request" onClick={handleNav} className="text-gray-200 text-lg hover:text-green-900">RFQ (Request for Quotation)</Link>
-            </li>
-            <li>
-                <Link to="/faq" onClick={handleNav} className="text-gray-200 text-lg hover:text-green-900">FAQ</Link>
-            </li>
+           
         </ul>
            }
         

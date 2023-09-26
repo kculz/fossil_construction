@@ -34,18 +34,18 @@ const Chat = () => {
             Whatsapp
           </Link>
 
-          <Link>
-            <FaFacebook size={50} color="blue" className="cursor-not-allowed" />
+          <Link className="cursor-not-allowed">
+            <FaFacebook size={50} color="blue"  />
             Facebook
           </Link>
 
-          <Link>
-            <FaInstagram size={50} color="purple" className="cursor-not-allowed" />
+          <Link className="cursor-not-allowed">
+            <FaInstagram size={50} color="purple"  />
             Instagram
           </Link>
 
-          <Link>
-            <FaTwitter size={50} color="cyan" className="cursor-not-allowed" />
+          <Link className="cursor-not-allowed">
+            <FaTwitter size={50} color="cyan"  />
             Twitter
           </Link>
 
@@ -56,11 +56,11 @@ const Chat = () => {
     {
       sideNav && <aside className="flex md:hidden flex-col items-center justify-center bg-green-600/50 backdrop-blur absolute top-24 w-[80vw] shadow gap-10 font-semibold px-2 h-full">
       <Link><FaTimes size={30} color="white" className="" onClick={handleSideNav}/></Link>
-      <Link onClick={handleSideNav}>Dashboard</Link>
-      <Link onClick={handleSideNav}>My account</Link>
-      <Link onClick={handleSideNav}>Make request</Link>
-      <Link onClick={handleSideNav}>Chat to Support</Link>
-      <Link to="/logout" onClick={handleSideNav}>Logout</Link>
+      <Link to="/client-area" onClick={handleSideNav}>Dashboard</Link>
+        <Link to="/my-account" onClick={handleSideNav}>My account</Link>
+        <Link to="/make-request" onClick={handleSideNav}>Make request</Link>
+        <Link className="active" to="/chat" onClick={handleSideNav}>Chat to Support</Link>
+        <Link to="/logout" onClick={handleSideNav}>Logout</Link>
 
     </aside>
     }

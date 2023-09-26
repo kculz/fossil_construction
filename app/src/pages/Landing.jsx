@@ -103,15 +103,18 @@ const Landing = () => {
                       
         
                     </div>
+                    <div className="flex justify-center items-center py-2">
+                        <Link to="/services" className="bg-green-600 py-2 px-4 rounded">Go to services</Link>
+                    </div>
                 </div>
             {/* Services end */}
         
             {/* News letter */}
         
             <div className="bg-green-600 md:px-32 px-10 py-10 w-screen">
-                <div className="grid md:grid-cols-2 grid-cols-1">
+                <div className="grid md:grid-cols-2 grid-cols-1 py-20">
                     <div className=" w-full">
-                        <h1 className="text-gray-300 md:text-4xl text-2xl">Subscribe to our <span className="md:text-4xl text-3xl text-white font-semibold">Newsletters</span></h1>
+                        <h1 className="text-gray-300 md:text-4xl text-2xl py-5">Subscribe to our <span className="md:text-4xl text-3xl text-white font-semibold">Newsletters</span></h1>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente sequi nulla ipsa rerum.</p>
                     </div>
         
@@ -183,7 +186,7 @@ const Landing = () => {
             {/* News letter */}
         
             <div className="bg-green-600 md:px-32 px-10 py-10 w-screen">
-                <div className="grid md:grid-cols-2 grid-cols-1">
+                <div className="grid md:grid-cols-2 grid-cols-1 py-20">
                     <div className=" w-full">
                         <h1 className="text-gray-300 md:text-4xl text-2xl">Subscribe to our <span className="md:text-4xl text-3xl text-white font-semibold">Newsletters</span></h1>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente sequi nulla ipsa rerum.</p>
