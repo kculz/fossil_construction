@@ -14,7 +14,7 @@ const Dashboard = () => {
       <div className="pt-24">
         <div className="grid md:grid-cols-3 h-screen">
           <aside className="md:flex hidden flex-col items-center justify-center bg-green-600 shadow gap-10 font-semibold px-2 h-full">
-            <Link to="/client-area">Dashboard</Link>
+            <Link to="/client-area" className="active">Dashboard</Link>
             <Link to="/my-account">My account</Link>
             <Link to="/make-request">Make request</Link>
             <Link to="/chat">Chat to Support</Link>

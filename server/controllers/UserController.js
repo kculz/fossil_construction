@@ -40,7 +40,7 @@ const login = async (req, res) => {
 
         // req.session.username = userExist.username;
         // console.log(req.session.username)
-        return res.status(200).json({msg: `Welcome ${userExist.username}`, username: userExist.username, token});
+        return res.status(200).json({msg: `Welcome ${userExist.username}`, username: userExist.username, token, id: userExist.id});
 
     } catch (error) {
         res.status(500).json({error: "Internal server error."});
@@ -93,7 +93,21 @@ const remove = async (req, res) =>{
 }
 
 const show = async (req, res) => {
-    return res.status(200).json({msg: "show"});
+    const {id} = req.params;
+
+    try {
+        const user = await User.findByPk(id);
+
+        if(!user){
+            return res.status(404).json({msg: `User not found!`});
+        }
+
+        return res.status(200).json({msg: "found", data: user});
+        
+    } catch (error) {
+        console.log(error);
+        return res.status(500).json({err: "Internal server error"});
+    }
 }
 
 

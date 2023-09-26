@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { FaTimes } from "react-icons/fa"
+import { FaFacebook, FaInstagram, FaTimes, FaTwitter, FaWhatsapp } from "react-icons/fa"
 import { Link } from "react-router-dom"
 
 
@@ -14,10 +14,10 @@ const Chat = () => {
     <div className="pt-24">
       <div className="grid md:grid-cols-3 h-screen">
         <aside className="md:flex hidden flex-col items-center justify-center bg-green-600 shadow gap-10 font-semibold px-2 h-full">
-          <Link to="/client-area">Dashboard</Link>
+          <Link to="/client-area">Dashboard</Link> 
           <Link to="/my-account">My account</Link>
           <Link to="/make-request">Make request</Link>
-          <Link to="/chat">Chat to Support</Link>
+          <Link to="/chat" className="active">Chat to Support</Link>
           <Link to="/logout">Logout</Link>
         </aside>
 
@@ -27,9 +27,28 @@ const Chat = () => {
             }
           </Link>
 
-        <div className="md:col-span-2 w-full">
+        <div className="md:col-span-2 w-full flex gap-10 justify-center items-center flex-wrap">
           
-          chat
+          <Link to="https://api.whatsapp.com/send?phone=263738382881&text=hi" target="_blank">
+            <FaWhatsapp size={50} color="green" title="Use whatsapp for instant responses" />
+            Whatsapp
+          </Link>
+
+          <Link>
+            <FaFacebook size={50} color="blue" className="cursor-not-allowed" />
+            Facebook
+          </Link>
+
+          <Link>
+            <FaInstagram size={50} color="purple" className="cursor-not-allowed" />
+            Instagram
+          </Link>
+
+          <Link>
+            <FaTwitter size={50} color="cyan" className="cursor-not-allowed" />
+            Twitter
+          </Link>
+
         </div>
       </div>
     </div>

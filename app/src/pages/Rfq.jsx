@@ -41,7 +41,7 @@ const Rfq = () => {
           <aside className="md:flex hidden flex-col items-center justify-center bg-green-600 shadow gap-10 font-semibold px-2 h-full">
             <Link to="/client-area">Dashboard</Link>
             <Link to="/my-account">My account</Link>
-            <Link to="/make-request">Make request</Link>
+            <Link to="/make-request" className="active">Make request</Link>
             <Link to="/chat">Chat to Support</Link>
             <Link to="/logout">Logout</Link>
           </aside>

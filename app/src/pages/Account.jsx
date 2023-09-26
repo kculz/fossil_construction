@@ -1,19 +1,68 @@
-import { useState } from "react"
+import axios from "axios";
+import { useEffect, useState } from "react"
 import { FaTimes } from "react-icons/fa"
 import { Link } from "react-router-dom"
+import { toast } from "react-toastify";
+import { userData } from "../helper";
 
 const Account = () => {
+
+  const {id} = userData();
+
   const [sideNav, setSideNav] = useState(false);
   const handleSideNav = () => {
     setSideNav(false)
+  };
+
+  const [values, setValues] = useState({
+    fullname: '',
+    email: '',
+    username: '',
+    password: ''
+  });
+
+  const [userInfo, setUserInfo] = useState([]);
+
+  useEffect(()=> {
+   
+    const fetchData = async() => {
+       try {
+        const res = await axios.get(`/users/${id}`);
+        setUserInfo(res.data.data);
+       } catch (error) {
+        console.log(error);
+        toast.warn(error);
+       }
+    }
+
+    fetchData();
+    
+  }, [id]);
+
+  
+  const handleAccount = async (e) => {
+    e.preventDefault();
+
+    try {
+
+      const res = await axios.post(`/users/edit/${id}`, values);
+      const {msg} = res.data;
+      toast.success(msg);
+      console.log(res.data);
+
+    } catch (error) {
+      console.log(error);
+      toast.warn(error);
+    }
   }
+
   return (
     <>
     <div className="pt-24">
       <div className="grid md:grid-cols-3 h-screen">
         <aside className="md:flex hidden flex-col items-center justify-center bg-green-600 shadow gap-10 font-semibold px-2 h-full">
           <Link to="/client-area">Dashboard</Link>
-          <Link to="/my-account">My account</Link>
+          <Link to="/my-account" className="active">My account</Link>
           <Link to="/make-request">Make request</Link>
           <Link to="/chat">Chat to Support</Link>
           <Link to="/logout">Logout</Link>
@@ -25,9 +74,18 @@ const Account = () => {
             }
           </Link>
 
-        <div className="md:col-span-2 w-full">
+        <div className="md:col-span-2 w-full grid place-content-center">
           
-          account
+          <form action="" className="flex flex-col gap-5 w-[300px] p-5 md:w-[500px]" onSubmit={handleAccount}>
+            <h1 className="md:text-3xl text-2xl text-center">Update account information</h1>
+            <input type="text" value={userInfo.fullname} name="fullname" id="fullname" onChange={(e) => setValues({...values, fullname: e.target.value})} className="border border-green-600 outline-none py-2 px-5 rounded" />
+            <input type="text" value={userInfo.username} name="username" id="username" onChange={(e) => setValues({...values, username: e.target.value})} className="border border-green-600 outline-none py-2 px-5 rounded" />
+            <input type="email" value={userInfo.email} name="email" id="email" onChange={(e) => setValues({...values, email: e.target.value})} className="border border-green-600 outline-none py-2 px-5 rounded" />
+            <input type="password" placeholder="Change password" name="password" id="password" onChange={(e) => setValues({...values, password: e.target.value})} className="border border-green-600 outline-none py-2 px-5 rounded" />
+
+            <input type="submit" value="Update Info" className="bg-yellow-400 rounded py-2"/>
+          </form>
+          
         </div>
       </div>
     </div>

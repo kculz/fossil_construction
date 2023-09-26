@@ -43,7 +43,7 @@ const Login = () => {
             <div className="flex justify-center items-center">
             <form onSubmit={handleLogin} action="" className="flex flex-col gap-5 justify-center items-center md:pt-0 pt-24">
                 <h1 className="text-center md:text-3xl text-xl font-semibold">Login here</h1>
-                <p className="text-sm text-center">To become a user.</p>
+                <p className="text-sm text-center">Get started.</p>
                 <input required onChange={(e)=> setValues({...values, username: e.target.value})} type="text" name="username" id="username" placeholder="Enter your username" className="border border-green-600 bg-transparent outline-none px-2 py-3 text-lg text-green-600 rounded lg:w-[500px] w-full " />
                 
                 <input required onChange={(e)=> setValues({...values, password: e.target.value})} type="password" name="password" id="password" placeholder="Enter password" className="border border-green-600 bg-transparent outline-none px-2 py-3 text-lg text-green-600 rounded lg:w-[500px] w-full " />
