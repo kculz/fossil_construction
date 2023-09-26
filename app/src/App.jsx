@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import { Dashboard, Footer, Header, ProtectedRoute } from "./layouts"
-import { Landing, Login, Register, Rfq, Service, Services } from "./pages"
+import { Landing, Login, Logout, Register, Rfq, Service, Services } from "./pages"
 import { ToastContainer } from 'react-toastify'
 
 function App() {
@@ -18,6 +18,7 @@ function App() {
         <Route element={<ProtectedRoute />} >
         <Route path="/request-for-quotation" element={<Rfq />} />
         <Route path="/client-area" element={<Dashboard />} />
+        <Route path="/logout" element={<Logout />} />
         </Route>
         
 

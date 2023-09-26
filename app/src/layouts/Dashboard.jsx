@@ -16,7 +16,7 @@ const Dashboard = () => {
             <Link>My account</Link>
             <Link>Make request</Link>
             <Link>Chat to Support</Link>
-            <Link>Logout</Link>
+            <Link to="/logout">Logout</Link>
           </aside>
 
         <Link className="aside-icon px-3 fixed md:hidden" onClick={()=> setSideNav(!sideNav)}>
@@ -53,7 +53,7 @@ const Dashboard = () => {
         <Link onClick={handleSideNav}>My account</Link>
         <Link onClick={handleSideNav}>Make request</Link>
         <Link onClick={handleSideNav}>Chat to Support</Link>
-        <Link onClick={handleSideNav}>Logout</Link>
+        <Link to="/logout" onClick={handleSideNav}>Logout</Link>
 
       </aside>
       }
