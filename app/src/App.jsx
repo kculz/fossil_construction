@@ -15,10 +15,11 @@ function App() {
         <Route path="/user/login" element={<Login />} />
         <Route path="/services" element={<Services />} />
         <Route path="/services/:id" element={<Service />} />
-        
+        <Route element={<ProtectedRoute />} >
         <Route path="/request-for-quotation" element={<Rfq />} />
         <Route path="/client-area" element={<Dashboard />} />
-
+        </Route>
+        
 
       </Routes>
       <Footer />

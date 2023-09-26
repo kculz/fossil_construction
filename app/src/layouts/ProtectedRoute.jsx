@@ -8,7 +8,7 @@ const ProtectedRoute = () => {
     console.log(token);
   return (
         <React.Fragment>
-            {auth.token? <Outlet /> : <Navigate to="/client-area" />}
+            {auth.token? <Outlet /> : <Navigate to="/user/login" />}
         </React.Fragment>
   )
 }

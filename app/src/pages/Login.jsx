@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import axios from "axios"
@@ -21,10 +22,10 @@ const Login = () => {
      // axios.defaults.withCredentials = true;
      await axios.post('/users/login', values).then((res) => {
 
-      userStore(res.data)
-      console.log(res.data.msg);
       toast.success(res.data.msg);
       navigate('/client-area');
+      userStore(res.data);
+
 
   }).catch((err) => {
 
