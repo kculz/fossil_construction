@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import { Dashboard, Footer, Header, ProtectedRoute } from "./layouts"
-import { Account, Chat, Contact, Landing, Login, Logout, Register, Rfq, Service, Services } from "./pages"
+import { Account, Chat, Landing, Login, Logout, Register, Rfq, Service, Services } from "./pages"
 import { ToastContainer } from 'react-toastify'
 import { Request } from "./components"
 
@@ -18,7 +18,6 @@ function App() {
         <Route path="/user/login" element={<Login />} />
         <Route path="/services" element={<Services />} />
         <Route path="/services/:id" element={<Service />} />
-        <Route path="/contact" element={<Contact />} />
 
         {/* Protected Routes */}
         <Route element={<ProtectedRoute />} >

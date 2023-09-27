@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
-import axios from "axios"
 import { toast } from "react-toastify";
+import { Axios } from "../../config";
 
 const Register = () => {
 
@@ -23,7 +23,7 @@ const Register = () => {
       return;
     }
 
-    await axios.post('/users/register', values).then((res) => {
+    await Axios.post('/users/register', values).then((res) => {
       console.log(res.data.msg);
       toast.info(res.data.msg);
       navigate('/client-area');

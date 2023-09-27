@@ -1,9 +1,9 @@
-import axios from "axios";
 import { useEffect, useState } from "react"
 import { FaTimes } from "react-icons/fa"
 import { Link } from "react-router-dom"
 import { toast } from "react-toastify";
 import { userData } from "../helper";
+import { Axios } from "../../config";
 
 const Account = () => {
 
@@ -27,7 +27,7 @@ const Account = () => {
    
     const fetchData = async() => {
        try {
-        const res = await axios.get(`/users/${id}`);
+        const res = await Axios.get(`/users/${id}`);
         setUserInfo(res.data.data);
        } catch (error) {
         console.log(error);
@@ -45,7 +45,7 @@ const Account = () => {
 
     try {
 
-      const res = await axios.post(`/users/edit/${id}`, values);
+      const res = await Axios.post(`/users/edit/${id}`, values);
       const {msg} = res.data;
       toast.success(msg);
       console.log(res.data);

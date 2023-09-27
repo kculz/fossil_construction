@@ -1,8 +1,8 @@
-import axios from "axios";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { FaTimes } from "react-icons/fa"
+import { Axios } from "../../config";
 
 const Rfq = () => {
 
@@ -19,7 +19,7 @@ const Rfq = () => {
     e.preventDefault();
     try {
 
-      const res = await axios.post('/rfq/send', values);
+      const res = await Axios.post('/rfq/send', values);
       toast.info(res.data.msg);
       navigate('/success');
 
@@ -54,7 +54,7 @@ const Rfq = () => {
 
           <div className="md:col-span-2 w-full">
           <div className="bg-white md:px-32 px-10 w-full">
-            <div className="flex justify-center items-center  w-full py-56">
+            <div className="flex justify-center items-center  w-full py-24">
                 <form onSubmit={handleRequest} className="shadow rounded bg-white flex flex-col gap-3 p-3 lg:w-2/3 w-full">
                     <h1 className="md:text-3xl text-xl text-green-600 text-center capitalize">Request</h1>
                     <input onChange={(e) => setValues({...values, fullname: e.target.value})} type="text" name="fullname" id="fullname" placeholder="Enter your fullname" className="bg-transparent border border-green-600 rounded outline-none py-3 px-2 md:text-lg text-base text-green-600" required />

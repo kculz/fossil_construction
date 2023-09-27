@@ -1,9 +1,9 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
-import axios from "axios"
 import { toast } from "react-toastify";
 import { userStore } from "../helper";
+import { Axios } from "../../config";
 
 const Login = () => {
 
@@ -19,21 +19,20 @@ const Login = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
 
-    //  axios.defaults.withCredentials = true;
-     await axios.post('/users/login', values).then((res) => {
-
+    try {
+      const res = await Axios.post('/users/login', values);
+      let {msg, code} = res.data;
+      toast.success(`${msg}, code: ${code}`);
       navigate('/client-area');
       userStore(res.data);
       window.location.reload();
-      toast.success(res.data.msg);
 
-
-
-  }).catch((err) => {
-
-      toast.error(err.error);
-
-  })
+    } catch (error) {
+      const {msg, code} = error.response.data;
+      console.log(msg);
+      toast.warn(`${msg}, code: ${code}`);
+    }
+   
 
   };
   return (

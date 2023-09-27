@@ -4,19 +4,21 @@ const cors = require('cors');
 const userRoute = require('./routes/user');
 const serviceRoute = require('./routes/service');
 const db = require('./models');
+const {PORT, allowedDomain} = require('./config');
 
 const requestRoute = require("./routes/request");
 
 const app = express();
 const port = process.env.PORT || 9000;
 
-app.use(cors({
-    origin: ["http://localhost:5173"],
-    methods: ["POST", "GET", "PUT", "DELETE"],
-    Credential: true
-}));
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(cors({
+    origin: allowedDomain,
+    credentials: true,
+    methods: ["POST", "GET", "PATCH", "DELETE", "PUT"]
+}))
 
 
 
@@ -27,7 +29,7 @@ app.use('/api/rfq', requestRoute);
 
 
 db.sequelize.sync().then((req) => {
-    app.listen(port, ()=> {
+    app.listen(PORT, ()=> {
         console.log(`server running on http://localhost:${port}`);
     });
 })

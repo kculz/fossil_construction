@@ -29,18 +29,18 @@ const login = async (req, res) => {
         const userExist = await User.findOne({where: {username}});
 
         if(!userExist){
-            return res.status(404).json({msg: "Invalid credentials"});
+            return res.status(404).json({msg: "Invalid credentials", code: 0});
         }
 
         if(password != userExist.password){
-            return res.status(404).json({msg: "Invalid credentials"});
+            return res.status(404).json({msg: "Invalid credentials", code: 0});
         }
 
         const token = jwt.sign({userId: userExist.id}, process.env.JWT_SECRET, {expiresIn: "1d"});
 
         // req.session.username = userExist.username;
         // console.log(req.session.username)
-        return res.status(200).json({msg: `Welcome ${userExist.username}`, username: userExist.username, token, id: userExist.id});
+        return res.status(200).json({msg: `Welcome ${userExist.username}`, code: 1, username: userExist.username, token, id: userExist.id});
 
     } catch (error) {
         res.status(500).json({error: "Internal server error."});
