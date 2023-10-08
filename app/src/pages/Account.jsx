@@ -41,7 +41,7 @@ const Account = () => {
 
     fetchData();
     
-  }, [id]);
+  }, [id, token]);
 
   
   const handleAccount = async (e) => {
