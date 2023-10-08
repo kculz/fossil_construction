@@ -19,8 +19,8 @@ const Request = () => {
     return <Navigate to="/client-area" />;
   }
   return (
-    <div className="flex justify-center items-center bg-white md:px-32 px-10">
-        <BiMailSend  />
+    <div className="flex flex-col gap-5 w-screen h-screen justify-center items-center bg-white md:px-32 px-10">
+        <BiMailSend size={100} color='green' />
         <h1>Request sent successfully</h1>
     </div>
   )

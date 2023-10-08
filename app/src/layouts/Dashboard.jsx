@@ -3,6 +3,7 @@ import { FaTimes } from "react-icons/fa"
 import { Link } from "react-router-dom"
 import {FiGitPullRequest} from "react-icons/fi"
 import {BsPersonFillGear, BsFillChatLeftDotsFill} from "react-icons/bs"
+import {LuConstruction} from "react-icons/lu"
 
 const Dashboard = () => {
   const [sideNav, setSideNav] = useState(false);
@@ -34,6 +35,11 @@ const Dashboard = () => {
               <Link to="/make-request" className="shadow rounded p-5 bg-white">
               <FiGitPullRequest size={50} color="green" className="mb-2"/>
                 Make request
+              </Link>
+
+              <Link to="/make-request" className="shadow rounded p-5 bg-white">
+              <LuConstruction size={50} color="green" className="mb-2"/>
+                Start a new Project
               </Link>
 
               <Link to="/chat" className="shadow rounded p-5 bg-white">

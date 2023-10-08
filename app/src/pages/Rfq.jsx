@@ -3,8 +3,11 @@ import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { FaTimes } from "react-icons/fa"
 import { Axios } from "../../config";
+import { userData } from "../helper";
 
 const Rfq = () => {
+
+  const {token} = userData();
 
   const [values, setValues] = useState({
     fullname: "",
@@ -19,12 +22,23 @@ const Rfq = () => {
     e.preventDefault();
     try {
 
-      const res = await Axios.post('/rfq/send', values);
+      const res = await Axios.post('/rfq/send', values, {
+        headers: {
+          'Authorization': `Bearer ${token}`
+        }
+      });
       toast.info(res.data.msg);
       navigate('/success');
 
     } catch (error) {
-      console.log(error);
+      const err = error.response.data;
+      
+      if(err){
+        toast.error(err)
+      }else{
+        toast.error(error.response.data.error);
+      }
+      navigate('/request-error');
     }
 
   };

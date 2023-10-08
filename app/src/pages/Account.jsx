@@ -7,7 +7,7 @@ import { Axios } from "../../config";
 
 const Account = () => {
 
-  const {id} = userData();
+  const {id, token} = userData();
 
   const [sideNav, setSideNav] = useState(false);
   const handleSideNav = () => {
@@ -27,7 +27,11 @@ const Account = () => {
    
     const fetchData = async() => {
        try {
-        const res = await Axios.get(`/users/${id}`);
+        const res = await Axios.get(`/users/${id}`, {
+          headers: {
+            "Authorization": `Bearer ${token}`
+          }
+        });
         setUserInfo(res.data.data);
        } catch (error) {
         console.log(error);
@@ -45,7 +49,11 @@ const Account = () => {
 
     try {
 
-      const res = await Axios.post(`/users/edit/${id}`, values);
+      const res = await Axios.post(`/users/edit/${id}`, values, {
+        headers: {
+          'Authorization': `Bearer ${token}`,
+        }
+      });
       const {msg} = res.data;
       toast.success(msg);
       console.log(res.data);

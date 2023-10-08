@@ -3,6 +3,7 @@ require('dotenv').config();
 const cors = require('cors');
 const userRoute = require('./routes/user');
 const serviceRoute = require('./routes/service');
+const projectRoute = require('./routes/project');
 const db = require('./models');
 const {PORT, allowedDomain} = require('./config');
 
@@ -26,6 +27,7 @@ app.use(cors({
 app.use('/api/users', userRoute);
 app.use('/api/services', serviceRoute);
 app.use('/api/rfq', requestRoute);
+app.use('/api/projects', projectRoute);
 
 
 db.sequelize.sync().then((req) => {

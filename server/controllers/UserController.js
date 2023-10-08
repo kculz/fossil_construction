@@ -38,8 +38,6 @@ const login = async (req, res) => {
 
         const token = jwt.sign({userId: userExist.id}, process.env.JWT_SECRET, {expiresIn: "1d"});
 
-        // req.session.username = userExist.username;
-        // console.log(req.session.username)
         return res.status(200).json({msg: `Welcome ${userExist.username}`, code: 1, username: userExist.username, token, id: userExist.id});
 
     } catch (error) {
