@@ -10,11 +10,14 @@ const create = async(req, res) => {
     try {
         const {userId} = req.user;
 
-        const {title, desc} = req.body;
+        const {title, desc, expectedStartDate, expectedCompletion, location } = req.body;
 
         await Project.create({
-            title: title,
-            desc: desc,
+            title,
+            desc,
+            expectedStartDate,
+            expectedCompletion,
+            location,
             projectOwnerId: userId
         });
 

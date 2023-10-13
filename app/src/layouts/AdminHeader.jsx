@@ -23,6 +23,9 @@ const AdminHeader = () => {
                             <Link to="/make-request" className="lg:text-sm text-xs  text-gray-100 hover:text-green-900">Make Request</Link>
                         </li>
                         <li>
+                            <Link to="/my-project" className="lg:text-sm text-xs  text-gray-100 hover:text-green-900">My Project</Link>
+                        </li>
+                        <li>
                             <Link to="/chat" className="lg:text-sm text-xs  text-gray-100 hover:text-green-900">Chat to Support</Link>
                         </li>
                         <li>
@@ -55,6 +58,9 @@ const AdminHeader = () => {
             </li>
             <li>
                 <Link onClick={handleNav} to="/make-request" className="lg:text-sm text-xs  text-gray-100 hover:text-green-900">Make Request</Link>
+            </li>
+            <li>
+                <Link onClick={handleNav} to="/project" className="lg:text-sm text-xs  text-gray-100 hover:text-green-900">Start Project</Link>
             </li>
             <li>
                 <Link onClick={handleNav} to="/chat" className="lg:text-sm text-xs  text-gray-100 hover:text-green-900">Chat to Support</Link>

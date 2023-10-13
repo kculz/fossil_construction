@@ -72,6 +72,7 @@ const Account = () => {
           <Link to="/client-area">Dashboard</Link>
           <Link to="/my-account" className="active">My account</Link>
           <Link to="/make-request">Make request</Link>
+          <Link to="/project">Start Project</Link>
           <Link to="/chat">Chat to Support</Link>
           <Link to="/logout">Logout</Link>
         </aside>
@@ -104,6 +105,7 @@ const Account = () => {
       <Link to="/client-area" onClick={handleSideNav}>Dashboard</Link>
       <Link className="active" to="/my-account" onClick={handleSideNav}>My account</Link>
       <Link to="/make-request" onClick={handleSideNav}>Make request</Link>
+      <Link to="/project" onClick={handleSideNav}>Start Project</Link>
       <Link to="/chat" onClick={handleSideNav}>Chat to Support</Link>
       <Link to="/logout" onClick={handleSideNav}>Logout</Link>
 

@@ -9,9 +9,27 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.TEXT,
             allowNull: false
         },
-        isDone: {
-            type: DataTypes.BOOLEAN,
-            defaultValue: false,
+        expectedStartDate: {
+            type: DataTypes.DATE,
+            defaultValue: sequelize.literal(`DATEADD(day, 5,GETDATE())`),
+            allowNull: false
+        },
+        expectedCompletion: {
+            type: DataTypes.DATE,
+            allowNull: true
+        },
+        location: {
+            type: DataTypes.TEXT,
+            allowNull: true
+        },
+        isApproved: {
+            type: DataTypes.STRING,
+            defaultValue: "pending approval",
+            allowNull: false
+        },
+        status: {
+            type: DataTypes.STRING,
+            defaultValue: "waiting for approval",
             allowNull: false
         }
     })
