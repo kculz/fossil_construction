@@ -1,7 +1,7 @@
 const jwt = require('jsonwebtoken');
 const { JWT_SECRET } = require('../config')
 
-const authMiddleware = (req,res,next) => {
+function authMiddleware(req,res,next){
   const authHeader = req.headers.authorization;
 
   try {
@@ -23,5 +23,14 @@ const authMiddleware = (req,res,next) => {
   }
 }
 
+function verifyAdmin(req, res, next){
+  authMiddleware(req, res, ()=> {
+    if(req.user.idAdmin){
+      next();
+    }else{
+      return res.status(403).json("You are restricted to perform this action.")
+    }
+  })
+}
 
-  module.exports = authMiddleware;
+  module.exports = {authMiddleware, verifyAdmin};
