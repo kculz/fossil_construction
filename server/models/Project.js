@@ -11,8 +11,7 @@ module.exports = (sequelize, DataTypes) => {
         },
         expectedStartDate: {
             type: DataTypes.DATE,
-            defaultValue: sequelize.literal(`DATEADD(day, 5,GETDATE())`),
-            allowNull: false
+            allowNull:false
         },
         expectedCompletion: {
             type: DataTypes.DATE,
@@ -23,13 +22,22 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: true
         },
         isApproved: {
-            type: DataTypes.STRING,
-            defaultValue: "pending approval",
+            type: DataTypes.BOOLEAN,
+            defaultValue: false,
             allowNull: false
         },
         status: {
             type: DataTypes.STRING,
             defaultValue: "waiting for approval",
+            allowNull: false
+        },
+        price: {
+            type: DataTypes.DECIMAL(6,2),
+            allowNull: true
+        },
+        isPaid: {
+            type: DataTypes.BOOLEAN,
+            defaultValue: false,
             allowNull: false
         }
     })

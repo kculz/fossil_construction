@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import { Dashboard, Footer, Header, ProtectedRoute } from "./layouts"
-import { Account, Chat, Landing, Login, Logout, Project, Register, Rfq, Service, Services } from "./pages"
+import { Account, Chat, Landing, Login, Logout, Project, Projects, Register, Rfq, Service, Services } from "./pages"
 import { ToastContainer } from 'react-toastify'
 import { Request, RequestError } from "./components"
 
@@ -30,6 +30,7 @@ function App() {
         <Route path="/chat" element={<Chat />} />
         <Route path="/my-account" element={<Account />} />
         <Route path="/project" element={<Project />} />
+        <Route path="/my-project" element={<Projects />} />
         <Route path="/logout" element={<Logout />} />
         </Route>
         

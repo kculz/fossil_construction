@@ -31,6 +31,20 @@ const create = async(req, res) => {
 
 
 const show = async(req, res) => {
+    
+    const {userId} = req.user;
+
+    try {
+        const project = await Project.findAll({where: userId});
+
+        if(project.length < 1){
+            return res.status(404).json({msg: "No projects for User."})
+        }
+        return res.status(200).json({msg: "Data found", code: 1, data: project})
+        
+    } catch (error) {
+        console.log(error);
+    }
 
     return res.status().json();
 }

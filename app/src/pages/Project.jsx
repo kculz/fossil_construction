@@ -7,11 +7,6 @@ import { userData } from "../helper";
 
 const Project = () => {
 
-    const [minDate, setMinDate] = useState('');
-    
-    const currentDate = new Date().toISOString().split("T")[0];
-
-
     const {token} = userData();
     const [sideNav, setSideNav] = useState(false);
     const handleSideNav = () => {
