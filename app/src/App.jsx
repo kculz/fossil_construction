@@ -3,6 +3,7 @@ import { Dashboard, Footer, Header, ProtectedRoute } from "./layouts"
 import { Account, Chat, Landing, Login, Logout, Project, Projects, Register, Rfq, Service, Services } from "./pages"
 import { ToastContainer } from 'react-toastify'
 import { Request, RequestError } from "./components"
+import { UserProjects } from "./admin"
 
 function App() {
  
@@ -31,6 +32,7 @@ function App() {
         <Route path="/my-account" element={<Account />} />
         <Route path="/project" element={<Project />} />
         <Route path="/my-project" element={<Projects />} />
+        <Route path="/projects" element={<UserProjects />} />
         <Route path="/logout" element={<Logout />} />
         </Route>
         
