@@ -1,9 +1,24 @@
-const {Project} = require('../models');
+const { Op } = require('sequelize');
+const {Project, User} = require('../models');
 
 
 const index = async(req, res) => {
 
-    return res.status().json();
+    try {
+
+        const resi = await Project.findAll({
+            include: [User]
+        });
+        
+        return res.status(200).json({data: resi});
+
+    } catch (error) {
+        console.log(error)
+
+        return res.status(500).json(error);
+        
+    }
+
 }
 
 const create = async(req, res) => {

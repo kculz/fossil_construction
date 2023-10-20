@@ -25,7 +25,7 @@ function authMiddleware(req,res,next){
 
 function verifyAdmin(req, res, next){
   authMiddleware(req, res, ()=> {
-    if(req.user.idAdmin){
+    if(req.user.idAdmin || req.user){
       next();
     }else{
       return res.status(403).json("You are restricted to perform this action.")
