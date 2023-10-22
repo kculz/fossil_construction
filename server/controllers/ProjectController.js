@@ -14,9 +14,7 @@ const index = async(req, res) => {
 
     } catch (error) {
         console.log(error)
-
         return res.status(500).json(error);
-        
     }
 
 }
@@ -41,7 +39,6 @@ const create = async(req, res) => {
         console.log(error);
         res.status(500).json('Internal server error.')
     }
-    return res.status().json();
 }
 
 
@@ -53,21 +50,63 @@ const show = async(req, res) => {
         const project = await Project.findAll({where: userId});
 
         if(project.length < 1){
-            return res.status(404).json({msg: "No projects for User."})
+            return res.status(404).json({msg: "No projects for User."});
         }
-        return res.status(200).json({msg: "Data found", code: 1, data: project})
+        return res.status(200).json({msg: "Data", code: 1, data: project});
         
     } catch (error) {
         console.log(error);
+        return res.status(500).json({error: "Internal server error."});
     }
-
-    return res.status().json();
 }
 
+const getProject = async(req, res) => {
+    const {id} = req.params;
+
+    try {
+        const project = await Project.findByPk(id, {include: [User]});
+
+        if(!project){
+            return res.status(404).json({msg: "Resource not found."});
+        }
+        
+        return res.status(200).json({msg: "data", data: project});
+    } catch (error) {
+        console.log(error);
+        return res.status(500).json({error: "Internal server error."});
+    }
+}
 
 const edit = async(req, res) => {
 
-    return res.status().json();
+    const {id} = req.params;
+
+    try {
+        const {title, desc, expectedStartDate, expectedCompletion,location, isApproved, status, price, isPaid} = req.body;
+
+        const projectExist = Project.findByPk(id);
+        if(!projectExist){
+            return res.status(404).json({msg: "Project not found."})
+        }
+
+        projectExist.title = title;
+        projectExist.desc = desc;
+        projectExist.expectedStartDate = expectedStartDate;
+        projectExist.expectedCompletion = expectedCompletion;
+        projectExist.location = location;
+        projectExist.isApproved = isApproved;
+        projectExist.status = status;
+        projectExist.price = price;
+        projectExist.isPaid = isPaid;
+
+        return res.status(200).json({msg: "Projects", data: projectExist});
+
+    } catch (error) {
+        console.log(error);
+        return res.status(500).json({error: "Internal server error."});
+    }
+
+
 }
 
 
@@ -81,5 +120,6 @@ module.exports = {
     create,
     show,
     edit,
-    remove
+    remove,
+    getProject
 }
