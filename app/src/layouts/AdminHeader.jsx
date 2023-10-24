@@ -1,15 +1,31 @@
 import { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { userData } from "../helper";
+import jwt from "jsonwebtoken";
 
 const AdminHeader = () => {
   const [openNav, setOpenNav] = useState(false);
   const handleNav = () => {
       setOpenNav(false);
   }
+
+  const {token} = userData();
+
+  const decodeToken = jwt.decode(token);
+
+  const {isAdmin} = decodeToken;
+
+  
   return (
     <>
             {/* Main Menu */}
+
+            {
+                isAdmin && (
+                    <p>Hello</p>
+                )
+            }
                 <header className="w-screen h-24 bg-gray-900/50 backdrop-blur fixed flex justify-between items-center lg:px-32 px-10 z-50">
                     <h1 className="text-xl lg:text-3xl text-white"><Link to="/" onClick={handleNav}>Fossil Construction</Link></h1>
                     <ul className="md:flex hidden justify-center items-center gap-5 ">
