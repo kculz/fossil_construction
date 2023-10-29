@@ -77,7 +77,9 @@ const Footer = () => {
         </div>
       </div>
       <p className="mt-8 text-xs text-gray-800 md:text-start text-center">
+        <Link to='/admin/login' onClick={window.location.reload}>
         © 2023 Fossil Constructing
+        </Link>
       </p>
     </div>
   </footer>

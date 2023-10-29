@@ -28,7 +28,7 @@ const Login = () => {
       window.location.reload();
 
     } catch (error) {
-      const {msg, code} = error.response.data;
+      let {msg, code} = error.response.data;
       console.log(msg);
       toast.warn(`${msg}, code: ${code}`);
     }

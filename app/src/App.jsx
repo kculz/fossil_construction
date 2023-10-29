@@ -3,24 +3,41 @@ import { Dashboard, Footer, Header, ProtectedRoute } from "./layouts"
 import { Account, Chat, Landing, Login, Logout, Project, Projects, Register, Rfq, Service, Services } from "./pages"
 import { ToastContainer } from 'react-toastify'
 import { NotFound, Request, RequestError } from "./components"
-import { UserProject, UserProjects } from "./admin"
+import { AdminLogin, UserProject, UserProjects } from "./admin"
 
 function App() {
  
   return (
     <>
      <BrowserRouter>
+
+     <Routes>
+        <Route path="/*" element={<NotFound />} />
+        <Route path="/admin/login" element={<AdminLogin />} />
+        <Route path="/user/register" element={<Register />} />
+        <Route path="/user/login" element={<Login />} />
+
+        <Route element={<ProtectedRoute />}>
+        <Route path="/projects" element={<UserProjects />} />
+        <Route path="/projects/:id" element={<UserProject />} />
+        <Route path="/logout" element={<Logout />} />
+        </Route>
+     </Routes>
+
+     </BrowserRouter>
+
+     <BrowserRouter>
+
       <Header />
       <Routes>
 
         {/* Basic Routes */}
         <Route path="/" element={<Landing />} />
-        <Route path="/user/register" element={<Register />} />
-        <Route path="/user/login" element={<Login />} />
+
         <Route path="/services" element={<Services />} />
         <Route path="/services/:id" element={<Service />} />
         <Route path="/send" element={<Request />} />
-        <Route path="/*" element={<NotFound />} />
+
 
         {/* Protected Routes */}
         <Route element={<ProtectedRoute />} >
@@ -33,8 +50,6 @@ function App() {
         <Route path="/my-account" element={<Account />} />
         <Route path="/project" element={<Project />} />
         <Route path="/my-project" element={<Projects />} />
-        <Route path="/projects" element={<UserProjects />} />
-        <Route path="/projects/:id" element={<UserProject />} />
         <Route path="/logout" element={<Logout />} />
         </Route>
         
