@@ -2,11 +2,16 @@ import { useEffect, useState, useRef } from "react";
 import { userData } from "../../../helper";
 import { Axios } from "../../../../config";
 import { Link } from "react-router-dom";
+import { useReactToPrint } from 'react-to-print';
 
 const UserProjects = () => {
   const {token} = userData();
 
   const printRef = useRef();
+
+  const handlePrint = useReactToPrint({
+    content: () => printRef.current,
+  })
   
   const [projects, setProjects] = useState([]);
 
@@ -39,21 +44,24 @@ const UserProjects = () => {
   return (
     <div className=" h-screen w-screen py-32">
               {/* Add status filter */}
-      <div className="mb-4 px-10">
-        <label htmlFor="filter" className="text-gray-500 pr-5">Filter by: </label>
-        <select
-          value={status}
-          onChange={e => setStatus(e.target.value)}
-          className="border border-gray-300 rounded px-3 py-2 outline-none"
-        >
-          <option value="waiting for approval">Waiting for approval</option>
-          <option value="started">Started</option>
-          <option value="half way done">Half way done</option>
-          <option value="complete">Complete</option>
-        </select>
+      <div className="mb-4 px-10 flex gap-5">
+        <div>
+            <label htmlFor="filter" className="text-gray-500 pr-5">Filter by: </label>
+            <select
+            value={status}
+            onChange={e => setStatus(e.target.value)}
+            className="border border-gray-300 rounded px-3 py-2 outline-none"
+            >
+            <option value="waiting for approval">Waiting for approval</option>
+            <option value="started">Started</option>
+            <option value="half way done">Half way done</option>
+            <option value="complete">Complete</option>
+            </select>
+        </div>
+        <button onClick={handlePrint} className="bg-green-600 rounded text-white px-4 py-2">Print Page</button>
       </div>
 
-    <table className="w-full text-sm text-left text-gray-500 top-36">
+    <table ref={printRef} className="w-full text-sm text-left text-gray-500 top-36">
         <thead className="text-xs text-gray-700 uppercase bg-gray-50  ">
             <tr>
                 <th scope="col" className="px-6 py-3">

@@ -12,31 +12,28 @@ function App() {
      <BrowserRouter>
 
      <Routes>
-        <Route path="/*" element={<NotFound />} />
-        <Route path="/admin/login" element={<AdminLogin />} />
-        <Route path="/user/register" element={<Register />} />
-        <Route path="/user/login" element={<Login />} />
+        
 
         <Route element={<ProtectedRoute />}>
-        <Route path="/projects" element={<UserProjects />} />
-        <Route path="/projects/:id" element={<UserProject />} />
-        <Route path="/logout" element={<Logout />} />
+        
+
         </Route>
      </Routes>
 
-     </BrowserRouter>
-
-     <BrowserRouter>
+  
 
       <Header />
       <Routes>
 
         {/* Basic Routes */}
         <Route path="/" element={<Landing />} />
-
+        <Route path="/*" element={<NotFound />} />
         <Route path="/services" element={<Services />} />
         <Route path="/services/:id" element={<Service />} />
         <Route path="/send" element={<Request />} />
+        <Route path="/admin/login" element={<AdminLogin />} />
+        <Route path="/user/register" element={<Register />} />
+        <Route path="/user/login" element={<Login />} />
 
 
         {/* Protected Routes */}
@@ -50,6 +47,8 @@ function App() {
         <Route path="/my-account" element={<Account />} />
         <Route path="/project" element={<Project />} />
         <Route path="/my-project" element={<Projects />} />
+        <Route path="/projects" element={<UserProjects />} />
+        <Route path="/projects/:id" element={<UserProject />} />
         <Route path="/logout" element={<Logout />} />
         </Route>
         
