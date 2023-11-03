@@ -3,15 +3,15 @@ module.exports = (sequelize, DataTypes) => {
     const Project = sequelize.define("Project", {
         title: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: true
         },
         desc: {
             type: DataTypes.TEXT,
-            allowNull: false
+            allowNull: true
         },
         expectedStartDate: {
             type: DataTypes.DATE,
-            allowNull:false
+            allowNull:true
         },
         expectedCompletion: {
             type: DataTypes.DATE,
@@ -24,12 +24,12 @@ module.exports = (sequelize, DataTypes) => {
         isApproved: {
             type: DataTypes.BOOLEAN,
             defaultValue: false,
-            allowNull: false
+            allowNull: true
         },
         status: {
             type: DataTypes.STRING,
             defaultValue: "waiting for approval",
-            allowNull: false
+            allowNull: true
         },
         price: {
             type: DataTypes.DECIMAL(6,2),
@@ -38,7 +38,7 @@ module.exports = (sequelize, DataTypes) => {
         isPaid: {
             type: DataTypes.BOOLEAN,
             defaultValue: false,
-            allowNull: false
+            allowNull: true
         }
     })
 

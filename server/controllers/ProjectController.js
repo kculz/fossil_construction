@@ -47,7 +47,9 @@ const show = async(req, res) => {
     const {userId} = req.user;
 
     try {
-        const project = await Project.findAll({where: userId});
+        const project = await Project.findAll({where: {
+            projectOwnerId: userId
+        }});
 
         if(project.length < 1){
             return res.status(404).json({msg: "No projects for User."});
@@ -84,7 +86,7 @@ const edit = async(req, res) => {
     try {
         const {title, desc, expectedStartDate, expectedCompletion,location, isApproved, status, price, isPaid} = req.body;
 
-        const projectExist = Project.findByPk(id);
+        const projectExist = await Project.findByPk(id);
         if(!projectExist){
             return res.status(404).json({msg: "Project not found."})
         }
@@ -98,6 +100,9 @@ const edit = async(req, res) => {
         projectExist.status = status;
         projectExist.price = price;
         projectExist.isPaid = isPaid;
+
+        await projectExist.save()
+        console.log(projectExist)
 
         return res.status(200).json({msg: "Projects", data: projectExist});
 
