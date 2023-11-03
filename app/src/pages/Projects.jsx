@@ -61,32 +61,6 @@ const Projects = () => {
             
                 {
                     projects.map((item, key) => {
-                        if(item.isApproved && item.isPaid){
-                            return(
-                                <tr key={key} className="bg-white border-b">
-                                <td  scope="col" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
-                                   {item.title}
-                                </td>
-
-                                <td  scope="col" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
-                                   {item.expectedStartDate}
-                                </td>
-
-                                <td  scope="col" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
-                                   {item.expectedCompletion}
-                                </td>
-                                <td  scope="col" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
-                                   {item.price}
-                                </td>
-                                <td  scope="col" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
-                                   {item.status} 
-                                </td>
-                                <td scope="col" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                                   <Link className="bg-green-600 px-4 py-2 rounded text-white cursor-not-allowed" >Paid</Link>
-                                </td>
-                           </tr>
-                            )
-                        }
                         return(
                             <tr key={key} className="bg-white border-b">
                                  <td  scope="col" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
@@ -101,13 +75,26 @@ const Projects = () => {
                                     {item.expectedCompletion}
                                  </td>
                                  <td  scope="col" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
-                                    price will show once the projected is approved
+                                    { item.price === null ? (
+                                        <span className="text-yellow-600">Price not set!</span>
+                                    ) : (
+                                        item.price
+                                    )}
                                  </td>
                                  <td  scope="col" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
-                                    {item.status}
+
+                                    {item.status === 'complete' ? (
+                                        <span className="text-green-500 bg-yellow-200/70 py-1 px-1 rounded">Completed</span>
+                                    ) : (
+                                        item.status
+                                    )}
                                  </td>
                                  <td scope="col" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                                    <Link className="bg-green-600 px-4 py-2 rounded text-white cursor-not-allowed" >Pay</Link>
+                                 {item.isPaid ? (
+                                        <span className="text-green-500 bg-yellow-200/70 py-1 px-1 rounded">Paid</span>
+                                    ) : (
+                                        <Link className="bg-green-600 px-4 py-2 rounded text-white cursor-not-allowed">Pay</Link>
+                                    )}
                                  </td>
                             </tr>
                            

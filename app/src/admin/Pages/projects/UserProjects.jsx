@@ -36,9 +36,9 @@ const UserProjects = () => {
 
   }, [token])
 
-  const [status, setStatus] = useState("waiting for approval");
+  const [status, setStatus] = useState("all");
 
-  const filteredProjects = status === "waiting for approval"
+  const filteredProjects = status === "all"
         ? projects
         : projects.filter(item => item.status === status)
   return (
@@ -52,6 +52,7 @@ const UserProjects = () => {
             onChange={e => setStatus(e.target.value)}
             className="border border-gray-300 rounded px-3 py-2 outline-none"
             >
+            <option value="all" defaultValue>All</option>
             <option value="waiting for approval">Waiting for approval</option>
             <option value="started">Started</option>
             <option value="half way done">Half way done</option>
@@ -73,8 +74,11 @@ const UserProjects = () => {
                 <th scope="col" className="px-6 py-3">
                     Location
                 </th>
+                {/* <th scope="col" className="px-6 py-3">
+                    Details
+                </th> */}
                 <th scope="col" className="px-6 py-3">
-                    Expected Start Date
+                    Status
                 </th>
                 <th></th>
                
@@ -99,11 +103,14 @@ const UserProjects = () => {
                                  <td  scope="col" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
                                     {item.location}
                                  </td>
+                                 {/* <td  scope="col" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
+                                    {item.desc}
+                                 </td> */}
                                  <td  scope="col" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
-                                  {item.expectedStartDate}
+                                  {item.status}
                                  </td>
                                  
-                                 <td scope="col" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap"><Link to={`/projects/${item.id}`} className="bg-green-600 rounded px-4 py-2 text-white">Edit Project</Link></td>
+                                 <td scope="col" className="px-6 py-4 text-4xl font-medium text-gray-900 whitespace-nowrap"><Link to={`/projects/${item.id}`} className="rounded px-4 py-2 text-gray-900">...</Link></td>
                                  
                             </tr>
                            

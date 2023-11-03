@@ -5,7 +5,7 @@ import { Axios } from "../../config";
 import { toast } from "react-toastify";
 import { userData } from "../helper";
 
-const Project = () => {
+const CreateProject = () => {
 
     const {token} = userData();
     const [sideNav, setSideNav] = useState(false);
@@ -16,8 +16,6 @@ const Project = () => {
     const [values, setValues] = useState({
         title: "",
         desc: "",
-        expectedStartDate: "",
-        expectedCompletion: "",
         location: ""
     
 
@@ -71,20 +69,19 @@ const Project = () => {
                 <label htmlFor="title">Project Title</label>
                 <input type="text"  name="title" id="title" onChange={(e) => setValues({...values, title: e.target.value})} className="border border-green-600 outline-none py-2 px-5 rounded" placeholder="Project Title" required/>
             </div>
+
+            <div className="flex flex-col">
+                <label htmlFor="location">Project Location</label>
+                <input type="text"  name="location" id="location" onChange={(e) => setValues({...values, location: e.target.value})} className="border border-green-600 outline-none py-2 px-5 rounded" placeholder="Project Location" required />
+            </div>
+
             <div className="flex flex-col">
                 <label htmlFor="desc">Project Details</label>
-                <textarea type="text"  name="desc" id="desc" onChange={(e) => setValues({...values, desc: e.target.value})} className="border border-green-600 outline-none py-2 px-5 rounded" placeholder="Project Details" required></textarea>
+                <textarea type="text" rows={10} name="desc" id="desc" onChange={(e) => setValues({...values, desc: e.target.value})} className="border border-green-600 outline-none py-2 px-5 rounded" placeholder="Project Details | Project requirements" required></textarea>
             </div>
 
-           <div className="flex flex-col">
-            <label htmlFor="expectedStartDate">Expected Start Date</label>
-           <input type="date" name="expectedStartDate" id="expectedStartDate" onChange={(e) => setValues({...values, expectedStartDate: e.target.value})} className="border border-green-600 outline-none py-2 px-5 rounded" />
-           </div>
-
-            <div className="flex flex-col">
-            <label htmlFor="expectedCompletion">Expected Completion date</label>
-            <input type="date" name="expectedCompletion" id="expectedCompletion" onChange={(e) => setValues({...values, expectedCompletion: e.target.value})} className="border border-green-600 outline-none py-2 px-5 rounded" required/>
-            </div>
+           
+           
 
             <input type="submit" value="Propose Project" className="bg-yellow-400 rounded cursor-pointer py-2"/>
           </form>
@@ -108,4 +105,4 @@ const Project = () => {
   )
 }
 
-export default Project
+export default CreateProject

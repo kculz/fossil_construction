@@ -18,7 +18,7 @@ const Dashboard = () => {
             <Link to="/client-area" className="active">Dashboard</Link>
             <Link to="/my-account">My account</Link>
             <Link to="/make-request">Make request</Link>
-            <Link to="/project">Start Project</Link>
+            <Link to="/create-project">Start Project</Link>
             <Link to="/chat">Chat to Support</Link>
             <Link to="/logout">Logout</Link>
           </aside>
@@ -38,7 +38,7 @@ const Dashboard = () => {
                 Make request
               </Link>
 
-              <Link to="/project" className="shadow rounded p-5 bg-white">
+              <Link to="/create-project" className="shadow rounded p-5 bg-white">
               <LuConstruction size={50} color="green" className="mb-2"/>
                 Start a new Project
               </Link>
@@ -65,7 +65,7 @@ const Dashboard = () => {
         <Link className="active" onClick={handleSideNav}>Dashboard</Link>
         <Link to="/my-account" onClick={handleSideNav}>My account</Link>
         <Link to="/make-request" onClick={handleSideNav}>Make request</Link>
-        <Link to="/project" onClick={handleSideNav}>Start Project</Link>
+        <Link to="/create-project" onClick={handleSideNav}>Start Project</Link>
         <Link to="/chat" onClick={handleSideNav}>Chat to Support</Link>
         <Link to="/logout" onClick={handleSideNav}>Logout</Link>
 

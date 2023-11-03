@@ -20,7 +20,7 @@ const RequestError = () => {
   }
   return (
     <div className="flex flex-col gap-5 w-screen h-screen justify-center items-center bg-white md:px-32 px-10">
-        <BiMailSend size={100} color='green' />
+        <BiMailSend size={100} color='red' />
         <h1>Request not sent!!! Please make sure you are connected to the internet.</h1>
     </div>
   )
