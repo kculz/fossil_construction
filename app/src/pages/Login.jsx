@@ -57,7 +57,7 @@ const Login = () => {
             {/* Registration Content*/}
             <div className="bg-green-600 flex justify-center items-center gap-3 flex-col px-10">
                 <h1 className="md:text-5xl text-2xl font-semibold">Benefits of being  Registered </h1>
-                <p className="md:text-basic text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis expedita aut et natus eius asperiores nostrum voluptatem pariatur deleniti non.</p>
+                <p className="md:text-basic text-sm">It grants access to valuable information about the company&apos;s services and projects, keeping you informed, it opens doors to job opportunities, with direct application options .  Regular updates on company news and industry trends keep you informed..</p>
 
             </div>
             {/* Registration Content end  */}

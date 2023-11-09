@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { Link, useParams } from "react-router-dom"
+import { Link, useNavigate, useParams } from "react-router-dom"
 import { Axios } from "../../../../config";
 import { userData } from "../../../helper";
 import { toast } from "react-toastify";
@@ -8,6 +8,8 @@ const UserProject = () => {
     const {id} = useParams();
 
     const {token} = userData();
+
+    const navigate = useNavigate();
 
     const [izApproved, setIsApproved] = useState(false);
     const [expectedStartDate, setExpectedStartDate] = useState('');
@@ -58,6 +60,8 @@ const UserProject = () => {
 
         console.log(res);
         toast.info("updated")
+        navigate('/projects')
+
       } catch (error) {
         console.log(error);
         toast.error(error)

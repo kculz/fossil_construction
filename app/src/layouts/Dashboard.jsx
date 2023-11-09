@@ -19,6 +19,7 @@ const Dashboard = () => {
             <Link to="/my-account">My account</Link>
             <Link to="/make-request">Make request</Link>
             <Link to="/create-project">Start Project</Link>
+            <Link to="/my-project">My Projects</Link>
             <Link to="/chat">Chat to Support</Link>
             <Link to="/logout">Logout</Link>
           </aside>
@@ -41,6 +42,11 @@ const Dashboard = () => {
               <Link to="/create-project" className="shadow rounded p-5 bg-white">
               <LuConstruction size={50} color="green" className="mb-2"/>
                 Start a new Project
+              </Link>
+
+              <Link to="/my-project" className="shadow rounded p-5 bg-white">
+              <LuConstruction size={50} color="green" className="mb-2"/>
+                My Projects
               </Link>
 
               <Link to="/chat" className="shadow rounded p-5 bg-white">
@@ -66,6 +72,7 @@ const Dashboard = () => {
         <Link to="/my-account" onClick={handleSideNav}>My account</Link>
         <Link to="/make-request" onClick={handleSideNav}>Make request</Link>
         <Link to="/create-project" onClick={handleSideNav}>Start Project</Link>
+        <Link to="/my-project" onClick={handleSideNav}>My Projects</Link>
         <Link to="/chat" onClick={handleSideNav}>Chat to Support</Link>
         <Link to="/logout" onClick={handleSideNav}>Logout</Link>
 

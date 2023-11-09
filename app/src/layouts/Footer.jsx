@@ -10,8 +10,8 @@ const Footer = () => {
       <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
         <div>
         <h1 className="font-BlackOpsOne text-yellow md:text-5xl text-3xl">Fossil Constructing</h1>
-          <p className="max-w-xs mt-4 text-sm text-white">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium culpa dignissimos vitae.
+          <p className="max-w-xs mt-4 text-sm text-white font-semibold">
+          Let&apos;s make it happen, let&apos;s contract a better tomorrow for future generations. It&apos;s your dream home. Let&apos;s build it right.
           </p>
           <div className="flex mt-8 space-x-6 text-white">
             <a className="hover:opacity-75" href="#" target="_blank" rel="noreferrer">

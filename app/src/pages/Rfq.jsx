@@ -56,6 +56,8 @@ const Rfq = () => {
             <Link to="/client-area">Dashboard</Link>
             <Link to="/my-account">My account</Link>
             <Link to="/make-request" className="active">Make request</Link>
+            <Link to="/create-project" className="">Start Project</Link>
+            <Link to="/my-project" className="">My Project</Link>
             <Link to="/chat">Chat to Support</Link>
             <Link to="/logout">Logout</Link>
           </aside>
@@ -89,6 +91,8 @@ const Rfq = () => {
         <Link to="/client-area"  onClick={handleSideNav}>Dashboard</Link>
         <Link to="/my-account" onClick={handleSideNav}>My account</Link>
         <Link className="active" to="/make-request" onClick={handleSideNav}>Make request</Link>
+        <Link className="active" to="/create-project" onClick={handleSideNav}>Start Project</Link>
+        <Link className="active" to="/my-project" onClick={handleSideNav}>My Project</Link>
         <Link to="/chat" onClick={handleSideNav}>Chat to Support</Link>
         <Link to="/logout" onClick={handleSideNav}>Logout</Link>
 

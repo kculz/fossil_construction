@@ -1,11 +1,13 @@
 import { useState } from "react";
 import { FaTimes } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Axios } from "../../config";
 import { toast } from "react-toastify";
 import { userData } from "../helper";
 
 const CreateProject = () => {
+
+    const navigate = useNavigate();
 
     const {token} = userData();
     const [sideNav, setSideNav] = useState(false);
@@ -36,6 +38,7 @@ const CreateProject = () => {
 
             if(res){
                 toast.success(res.data.msg);
+                navigate('/my-project');
             }
 
         } catch (error) {
@@ -50,7 +53,8 @@ const CreateProject = () => {
           <Link to="/client-area">Dashboard</Link>
           <Link to="/my-account" >My account</Link>
           <Link to="/make-request">Make request</Link>
-          <Link to="/project" className="active">Start Project</Link>
+          <Link to="/create-project" className="active">Start Project</Link>
+          <Link to="/my-project" className="">My Projects</Link>
           <Link to="/chat">Chat to Support</Link>
           <Link to="/logout">Logout</Link>
         </aside>
@@ -96,6 +100,8 @@ const CreateProject = () => {
       <Link to="/client-area" onClick={handleSideNav}>Dashboard</Link>
       <Link className="active" to="/my-account" onClick={handleSideNav}>My account</Link>
       <Link to="/make-request" onClick={handleSideNav}>Make request</Link>
+      <Link to="/create-project" onClick={handleSideNav}>Start Project</Link>
+      <Link to="/my-project" onClick={handleSideNav}>My Projects</Link>
       <Link to="/chat" onClick={handleSideNav}>Chat to Support</Link>
       <Link to="/logout" onClick={handleSideNav}>Logout</Link>
 

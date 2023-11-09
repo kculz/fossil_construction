@@ -17,7 +17,8 @@ const Chat = () => {
           <Link to="/client-area">Dashboard</Link> 
           <Link to="/my-account">My account</Link>
           <Link to="/make-request">Make request</Link>
-          <Link to="/project">Start Project</Link>
+          <Link to="/create-project">Start Project</Link>
+          <Link to="/my-project">My Projects</Link>
           <Link to="/chat" className="active">Chat to Support</Link>
           <Link to="/logout">Logout</Link>
         </aside>
@@ -60,7 +61,7 @@ const Chat = () => {
       <Link to="/client-area" onClick={handleSideNav}>Dashboard</Link>
         <Link to="/my-account" onClick={handleSideNav}>My account</Link>
         <Link to="/make-request" onClick={handleSideNav}>Make request</Link>
-        <Link to="/project" onClick={handleSideNav}>Start Project</Link>
+        <Link to="/create-project" onClick={handleSideNav}>Start Project</Link>
         <Link className="active" to="/chat" onClick={handleSideNav}>Chat to Support</Link>
         <Link to="/logout" onClick={handleSideNav}>Logout</Link>
 

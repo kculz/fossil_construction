@@ -42,7 +42,7 @@ const UserProjects = () => {
         ? projects
         : projects.filter(item => item.status === status)
   return (
-    <div className=" h-screen w-screen py-32">
+    <div className=" h-full w-full py-32">
               {/* Add status filter */}
       <div className="mb-4 px-10 flex gap-5">
         <div>
