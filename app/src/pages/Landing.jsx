@@ -21,12 +21,12 @@ const Landing = () => {
         },
 
         {
-            imageUrl: "https://images.pexels.com/photos/323772/pexels-photo-323772.jpeg?auto=compress&cs=tinysrgb&w=600",
+            imageUrl: "https://curacaosewegenbouw.com/wp-content/uploads/2014/06/pic_cwm15.jpg",
             title: "Road Construction",
             desc: "We specialize in road construction, providing comprehensive solutions for building and improving road infrastructure. Our team delivers high-quality results that prioritize safety, durability, and efficiency. From planning and design to excavation, paving, and finishing touches, we ensure a seamless and well-executed project. With state-of-the-art equipment, advanced techniques, and a focus on sustainability, we create durable roadways that withstand heavy traffic and harsh weather. Safety is our top priority, and we minimize disruptions to surrounding communities and the environment. Contact us for professional and reliable road construction services that enhance connectivity and improve mobility."
         },
         {
-            imageUrl: "https://images.pexels.com/photos/323772/pexels-photo-323772.jpeg?auto=compress&cs=tinysrgb&w=600",
+            imageUrl: "https://st2.depositphotos.com/1000291/8752/i/450/depositphotos_87526854-stock-photo-excavator-loader-at-earthmoving-works.jpg",
             title: "Earthworks",
             desc: "At our construction company, we specialize in earthworks, offering comprehensive solutions for excavation, grading, and land preparation. Our experienced team is dedicated to delivering high-quality results that meet the unique requirements of each project."
         },
@@ -50,9 +50,9 @@ const Landing = () => {
             window.location.reload();
       
           } catch (error) {
-            const {msg, code} = error.response.data;
+            const {msg} = error.response.data;
             console.log(msg);
-            toast.warn(`${msg}, code: ${code}`);
+            toast.warn(`Invalid credentials`);
           }
     }
 

@@ -1,23 +1,23 @@
 {
   "development": {
-    "username": "binaryap_susu",
-    "password": "EDJ&CKz~iAG@",
-    "database": "binaryap_fossil",
-    "host": "server207.orangehost.com",
+    "username": "root",
+    "password": "",
+    "database": "fossil",
+    "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "test": {
-   "username": "binaryap_susu",
-    "password": "EDJ&CKz~iAG@",
-    "database": "binaryap_fossil",
-    "host": "server207.orangehost.com",
+    "username": "root",
+    "password": null,
+    "database": "database_test",
+    "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "production": {
-    "username": "binaryap_susu",
-    "password": "EDJ&CKz~iAG@",
-    "database": "binaryap_fossil",
-    "host": "server207.orangehost.com",
+    "username": "root",
+    "password": null,
+    "database": "database_production",
+    "host": "127.0.0.1",
     "dialect": "mysql"
   }
 }

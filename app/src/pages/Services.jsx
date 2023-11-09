@@ -5,19 +5,24 @@ const Services = () => {
     {
         imageUrl: "https://images.pexels.com/photos/7031406/pexels-photo-7031406.jpeg?auto=compress&cs=tinysrgb&w=600",
         title: "Home Construction",
-        desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio aspernatur exercitationem cupiditate eum dicta odio, ex fuga reprehenderit facere aliquid."
+        desc: "At Fossil Contracting, we specialize in home construction. Our team of professionals is dedicated to bringing your dream home to life. From concept to completion, we handle every aspect of the construction process, including planning, design, and execution. With our expertise and attention to detail, we create high-quality, safe, and beautiful homes that exceed your expectations. Trust us to build your perfect home from the ground up."
     },
 
     {
         imageUrl: "https://images.pexels.com/photos/3551216/pexels-photo-3551216.jpeg?auto=compress&cs=tinysrgb&w=600",
         title: "Home Renovations",
-        desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio aspernatur exercitationem cupiditate eum dicta odio, ex fuga reprehenderit facere aliquid."
+        desc: "At Fossil Contracting , we specialize in home renovation services. Whether you're looking to update a single room or transform your entire home, our skilled team is here to help. We understand that your home is a reflection of your personal style and needs. With our expertise in design and construction, we breathe new life into your space, enhancing its functionality and aesthetics. From kitchen and bathroom remodels to complete home makeovers, we provide top-quality craftsmanship and attention to detail. Let us turn your vision into reality and create a home that you'll love for years to come."
     },
 
     {
-        imageUrl: "https://images.pexels.com/photos/323772/pexels-photo-323772.jpeg?auto=compress&cs=tinysrgb&w=600",
-        title: "Complex Construction",
-        desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio aspernatur exercitationem cupiditate eum dicta odio, ex fuga reprehenderit facere aliquid."
+        imageUrl: "https://curacaosewegenbouw.com/wp-content/uploads/2014/06/pic_cwm15.jpg",
+        title: "Road Construction",
+        desc: "We specialize in road construction, providing comprehensive solutions for building and improving road infrastructure. Our team delivers high-quality results that prioritize safety, durability, and efficiency. From planning and design to excavation, paving, and finishing touches, we ensure a seamless and well-executed project. With state-of-the-art equipment, advanced techniques, and a focus on sustainability, we create durable roadways that withstand heavy traffic and harsh weather. Safety is our top priority, and we minimize disruptions to surrounding communities and the environment. Contact us for professional and reliable road construction services that enhance connectivity and improve mobility."
+    },
+    {
+        imageUrl: "https://st2.depositphotos.com/1000291/8752/i/450/depositphotos_87526854-stock-photo-excavator-loader-at-earthmoving-works.jpg",
+        title: "Earthworks",
+        desc: "At our construction company, we specialize in earthworks, offering comprehensive solutions for excavation, grading, and land preparation. Our experienced team is dedicated to delivering high-quality results that meet the unique requirements of each project."
     },
 ]
   return (
