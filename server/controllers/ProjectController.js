@@ -121,8 +121,8 @@ const edit = async(req, res) => {
         const email = projectExist.User.email;
 
         if(projectExist.isApproved === true){
-            subject = `Your project with Fossil constructing was approved.`
-            text = `Congradulations. Your project will start on payment of ${projectExist.price}. We welcome you to the Fossil Constructing projects.\n log into your account for more details. https://fossilconstruction.binary-apps.com/client-area`
+            subject = `Your project with fossil contracting was approved.`
+            text = `Congradulations. Your project will start on payment of ${projectExist.price}. We welcome you to the fossil contracting projects.\n log into your account for more details. https://fossilconstruction.binary-apps.com/client-area`
         }else{
             subject = `Project ${projectExist.title} was rejected.`
             text = `Oooops. Your project was rejected! Please contact admin (info@fossilconstructing.com) for more details`

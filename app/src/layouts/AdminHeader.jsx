@@ -18,7 +18,7 @@ const AdminHeader = () => {
 
            
                 <header className="w-screen h-24 bg-gray-900/50 backdrop-blur fixed flex justify-between items-center lg:px-32 px-10 z-50">
-                    <h1 className="text-xl lg:text-3xl text-white"><Link to="/" onClick={handleNav}>fossil constructing</Link></h1>
+                    <h1 className="text-xl lg:text-3xl text-white"><Link to="/" onClick={handleNav}>fossil contracting</Link></h1>
                     <ul className="md:flex hidden justify-center items-center gap-5 ">
                         <li>
                             <Link to="/client-area" className="lg:text-sm text-xs  text-gray-100 hover:text-green-900">Dashboard</Link>

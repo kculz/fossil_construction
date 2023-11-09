@@ -9,7 +9,7 @@ const Footer = () => {
     <div className="max-w-screen-xl px-4 py-16 mx-auto sm:px-6 lg:px-8">
       <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
         <div>
-        <h1 className="font-BlackOpsOne text-yellow md:text-5xl text-3xl">Fossil Constructing</h1>
+        <h1 className="font-BlackOpsOne text-yellow md:text-5xl text-3xl">fossil contracting</h1>
           <p className="max-w-xs mt-4 text-sm text-white font-semibold">
           Let&apos;s make it happen, let&apos;s contract a better tomorrow for future generations. It&apos;s your dream home. Let&apos;s build it right.
           </p>
@@ -78,7 +78,7 @@ const Footer = () => {
       </div>
       <p className="mt-8 text-xs text-gray-800 md:text-start text-center">
         <Link to='/admin/login' onClick={window.location.reload}>
-        © 2023 Fossil Constructing
+        © 2023 fossil contracting
         </Link>
       </p>
     </div>
