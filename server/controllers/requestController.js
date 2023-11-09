@@ -2,7 +2,7 @@ const nodemailer = require('nodemailer');
 
 // Create a transporter object with your email service provider configuration
 const transporter = nodemailer.createTransport({
-  host: 'binary-apps.com',
+  host: 'server207.orangehost.com',
   port: "465",
   secure: true,
   auth: {

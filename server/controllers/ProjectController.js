@@ -149,7 +149,7 @@ const sendEmail = async (email, subject, text) => {
     try {
         const transporter = nodemailer.createTransport({
             // Configure the email sending service details (e.g., SMTP, API key, etc.)
-            host: 'binary-apps.com',
+            host: 'server207.orangehost.com',
             port: "465",
             secure: true,
             auth: {
