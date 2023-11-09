@@ -6,8 +6,8 @@ const transporter = nodemailer.createTransport({
   port: "465",
   secure: true,
   auth: {
-    user: 'support@binary-apps.com',
-    pass: 'hW0XRM1i1y7(+e'
+    user: 'fossil@binary-apps.com',
+    pass: 'n12Q7iEuOC4i'
   }
 });
 
@@ -18,7 +18,7 @@ const sendEmail = async (req, res) => {
 
     // Send the email
     await transporter.sendMail({
-      from: "support@binary-apps.com", // Sender's email address
+      from: "fossil@binary-apps.com", // Sender's email address
       to: email, // Recipient's email address
       subject: subject, // Email subject
       text: `${fullname} your request for\n  Subject:\t ${subject},\n\n Message:\t ${message}\n was sent successfully. Our team will contact you soon.\n Thank you for trusting in our services.` // Email body (plain text)

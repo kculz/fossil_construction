@@ -153,13 +153,13 @@ const sendEmail = async (email, subject, text) => {
             port: "465",
             secure: true,
             auth: {
-                user: 'support@binary-apps.com',
-                pass: 'hW0XRM1i1y7(+e'
+                user: 'fossil@binary-apps.com',
+                pass: 'n12Q7iEuOC4i'
             }
         });
   
         const mailOptions = {
-            from: 'support@binary-apps.com', // Sender's email address
+            from: 'fossil@binary-apps.com', // Sender's email address
             to: email, // Recipient's email address
             subject: subject,
             text: text
